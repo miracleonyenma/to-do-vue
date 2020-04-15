@@ -6,6 +6,10 @@
   font-family: 'IBM Plex Sans';
 }
 
+:root {
+  --main: #a12cf7;
+}
+
 header {
   padding: 12px;
 }
@@ -23,5 +27,26 @@ header .info #count {
   background: #a12cf7;
   font-weight: 100;
   font-style: italic;
+}
+
+section.list-section {
+  min-width: 200px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+section.list-section header .input-field-cont {
+  position: relative;
+  height: 50px;
+  border: 2px solid #a12cf7;
+}
+
+section.list-section header .input-field-cont input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
 }
 /*# sourceMappingURL=styles.css.map */

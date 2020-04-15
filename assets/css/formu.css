@@ -1,0 +1,321 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --hue: 210;
+  --saturation: 88%;
+  --ligtness: 54%;
+  --main: hsl(var(--hue), var(--saturation), var(--ligtness));
+  --main-alpha: hsla(210, 88%, 54%, 0.7);
+  --secondary: hsl(var(--hue), var(--saturation), 16%);
+  --background: #ffffff;
+}
+
+.formu.input-field-cont.-placeholder input {
+  width: 100%;
+  height: 100%;
+  padding: 18px 0 0 18px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.formu.input-field-cont.-placeholder input:focus + label span {
+  -webkit-transform: translate(100%, -50%) scale(0.8);
+          transform: translate(100%, -50%) scale(0.8);
+  opacity: 0;
+}
+
+.formu.input-field-cont.-placeholder input:valid + label span {
+  -webkit-transform: translate(100%, -50%) scale(0.8);
+          transform: translate(100%, -50%) scale(0.8);
+  opacity: 0;
+}
+
+.formu.input-field-cont.--box {
+  position: relative;
+  height: 50px;
+  border: 2px solid var(--main);
+}
+
+.formu.input-field-cont.--box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+}
+
+.formu.form-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.formu.form-container *, .formu.form-container *::before, .formu.form-container *::after {
+  -webkit-transition: all 0.18s ease;
+  transition: all 0.18s ease;
+  font-size: 14px;
+}
+
+.formu.form-wrapper {
+  padding: 12px;
+}
+
+.formu.form-wrapper > div {
+  margin: 0 0 12px 0;
+}
+
+.formu.form-wrapper > div:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+
+.formu.group-cont {
+  display: inline-block;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.formu.group-cont > div {
+  margin: 0 0 12px 0;
+}
+
+.formu.group-cont > div.formu.radio-field-cont {
+  margin-bottom: 0;
+}
+
+.formu.group-cont > div:nth-last-of-type(1) {
+  margin: 0;
+}
+
+@media screen and (min-width: 535px) {
+  .formu.group-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .formu.group-cont > div {
+    margin: 0;
+  }
+  .formu.group-cont .formu.input-field-cont {
+    margin: 0 12px 0 0;
+  }
+  .formu.group-cont .formu.input-field-cont:nth-last-child(1) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.formu.input-field-cont {
+  height: 70px;
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  max-width: 320px;
+}
+
+.formu.input-field-cont input {
+  width: 100%;
+  height: 100%;
+  padding: 18px 0 0 18px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.formu.input-field-cont input:focus + label span {
+  -webkit-transform: translateY(-112.5%) scale(0.8);
+          transform: translateY(-112.5%) scale(0.8);
+  opacity: 0.6;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  color: var(--main);
+  transform: translateY(-112.5%) scale(0.8);
+  opacity: 0.6;
+  transform-origin: left;
+}
+
+.formu.input-field-cont input:valid + label span {
+  -webkit-transform: translateY(-112.5%) scale(0.8);
+          transform: translateY(-112.5%) scale(0.8);
+  opacity: 0.6;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  color: var(--main);
+}
+
+.formu.input-field-cont label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.formu.input-field-cont label span {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@media screen and (min-width: 600px) {
+  .formu.input-field-cont {
+    max-width: 100%;
+  }
+}
+
+.formu.radio-field-cont {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: relative;
+}
+
+.formu.radio-field-cont input {
+  opacity: 0;
+}
+
+.formu.radio-field-cont input:checked + label::after {
+  -webkit-transform: translate(calc(-50% + 7px + 2px), -50%) scale(1);
+          transform: translate(calc(-50% + 7px + 2px), -50%) scale(1);
+}
+
+.formu.radio-field-cont label {
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  padding: 8px;
+  position: unset;
+}
+
+.formu.radio-field-cont label::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--main);
+  border-radius: 14px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.formu.radio-field-cont label::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--main);
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(calc(-50% + 7px + 2px), -50%) scale(0);
+          transform: translate(calc(-50% + 7px + 2px), -50%) scale(0);
+}
+
+.formu.check-field-cont {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: relative;
+}
+
+.formu.check-field-cont input {
+  opacity: 0;
+}
+
+.formu.check-field-cont input:checked + label::after {
+  -webkit-transform: translate(calc(-50% + 7px + 2px), -50%) scale(1);
+          transform: translate(calc(-50% + 7px + 2px), -50%) scale(1);
+}
+
+.formu.check-field-cont label {
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  padding: 8px;
+  position: unset;
+}
+
+.formu.check-field-cont label::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--main);
+  border-radius: 14px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.formu.check-field-cont label::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--main);
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(calc(-50% + 7px + 2px), -50%) scale(0);
+          transform: translate(calc(-50% + 7px + 2px), -50%) scale(0);
+}
+
+.formu.check-field-cont label::before, .formu.check-field-cont label::after {
+  border-radius: 1px;
+}
+
+.formu.action-btn {
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--main)), to(var(--main-alpha)));
+  background: linear-gradient(0deg, var(--main), var(--main-alpha));
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  outline: none;
+}
+
+.formu.action-btn span {
+  color: var(--background);
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+.formu.action-btn.alt {
+  background: var(--background);
+  color: var(--main);
+}
+
+.formu.action-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.formu.action-btn:active {
+  -webkit-transform: scale(0.88);
+          transform: scale(0.88);
+}
+
+.formu.action-btn:focus {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+/*# sourceMappingURL=formu.css.map */
