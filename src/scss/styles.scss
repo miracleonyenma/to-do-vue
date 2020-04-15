@@ -4,3 +4,25 @@
     box-sizing: border-box;
     font-family: 'IBM Plex Sans';
 }
+
+header{
+    padding: 12px;
+
+    h1{
+        margin: 8px 0;
+    }
+
+    .info{
+        span{
+            margin: 0 8px 0 0;
+        }
+        #count{
+            // padding: 4px 8px;
+            // border-radius: 4px;
+            color: #fff;
+            background: #a12cf7;
+            font-weight: 100;
+            font-style: italic;
+        }
+    }
+}
