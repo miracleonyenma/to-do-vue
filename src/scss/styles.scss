@@ -9,7 +9,16 @@
     --main: #a12cf7;
 }
 
-header{
+.action-btn{
+    background: #a12cf7;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-75%, -50%);
+}
+
+header.main{
     padding: 12px;
 
     h1{
@@ -36,20 +45,77 @@ section.list-section{
     width: 100%;
     max-width: 400px;
     margin: auto;
+    padding: 12px;
 
     header{
-        // .input-field-cont{
-        //     position: relative;
-        //     height: 50px;
-        //     border: 2px solid #a12cf7;
+        margin: 0 0 2em 0;
+        .input-field-cont{
+            margin-left: auto;
+            margin-right: auto;
+            height: 60px;
+            max-width: 100%;
 
-        //     input{
-        //         width: 100%;
-        //         height: 100%;
-        //         border: none;
-        //         padding: 12px;
-        //         font-size: 1em;
-        //     }
+            input{
+            }
+        }
+
+        #add-btn{
+        }
+    }
+
+    section#list-items{
+        ul{
+            li{
+                padding: 12px;
+                border: 2px solid #a12cf7;
+                margin: 12px 0;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .remove-btn{
+                    padding: 12px 12px;
+                    line-height: 0.5;
+                    height: unset;
+                    transform: translate(calc(-100% - 8px), -50%);
+                }
+
+                .check-field-cont{
+                    padding: 0 0;
+                    label{
+                        display: inline-block;
+                        padding: 0;
+
+                        span{
+                            width: 100%;
+                            padding: 0 32px 0 20px;
+                            margin: auto;
+                            display: block;
+                        }
+                    }
+                    
+                }
+
+                //fix for formu's default checkbox
+                input[type="checkbox"]{
+                    transform: scale(0);
+                    position: absolute;
+                    
+                    & + label:after{
+                        transform: translate(calc(-50% + 7px), -50%) scale(0);
+                    }
+                    & + label:before{
+                        top: 50%;
+                        transform: translate(0, -50%);
+                    }
+                    &:checked + label:after{
+                        transform: translate(calc(-50% + 7px), -50%) scale(1);
+                    }
+                    &:checked + label span{
+                        text-decoration: line-through;
+                    }
+                }
+            }
         }
     }
 }

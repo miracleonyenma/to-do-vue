@@ -39,7 +39,7 @@
 
 .formu.input-field-cont.--box {
   position: relative;
-  height: 50px;
+  min-height: 50px;
   border: 2px solid var(--main);
 }
 

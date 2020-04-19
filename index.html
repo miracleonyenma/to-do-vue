@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="block box">
+    <header class="block box main">
         <h1 class="title">To do list</h1>
         <section class="info">
             <span class="button" id="count">6 tasks</span>
@@ -25,8 +25,46 @@
                 <label for="new">
                     <span>Enter new task</span>
                 </label>
+                <button id="add-btn" class="button action-btn" type="button">&plus;</button>
             </div>
         </header>
+        <section id="list-items">
+            <ul>
+                <li>
+                    <div class="formu check-field-cont">
+                        <input type="checkbox" name="task" id="task1">
+                        <label for="task1">
+                            <span>
+                                Feed the dog
+                            </span>
+                        </label>
+                    </div>
+                    <button class="remove-btn button action-btn">&times;</button>
+                </li>
+                <li>
+                    <div class="formu check-field-cont">
+                        <input type="checkbox" name="task" id="task2">
+                        <label for="task2">
+                            <span>
+                                Feed the dog again.
+                            </span>
+                        </label>
+                    </div>
+                    <button class="remove-btn button action-btn">&times;</button>
+                </li>
+                <li>
+                    <div class="formu check-field-cont">
+                        <input type="checkbox" name="task" id="task3">
+                        <label for="task3">
+                            <span>
+                                Feed the dog again. Again
+                            </span>
+                        </label>
+                    </div>
+                    <button class="remove-btn button action-btn">&times;</button>
+                </li>
+            </ul>
+        </section>
     </section>
     
     <script src="./assets/libs/vue/vue.js"></script>
