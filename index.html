@@ -22,11 +22,11 @@
         <section class="list-section">
             <header>
                 <div class="formu input-field-cont --box -placeholder">
-                    <input type="text" name="new" id="new" required>
+                    <input type="text" name="new" id="new" v-model="newTodoText"  v-on:keyup.enter="add()" required>
                     <label for="new">
                         <span>Enter new task</span>
                     </label>
-                    <button id="add-btn" class="button action-btn" type="button">&plus;</button>
+                    <button id="add-btn" class="button action-btn" type="button" @click="add">&plus;</button>
                 </div>
             </header>
             <section id="list-items">

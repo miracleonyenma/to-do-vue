@@ -17,6 +17,12 @@ new Vue({
     el: "#app",
     data : {
         todo : testdata,
-        newTodoItem : ""
+        newTodoText : ""
+    },
+    methods : {
+        add : function(){
+            this.todo.push({text: this.newTodoText, isDone:false})
+            this.newTodoText = "";
+        }
     }
 })
