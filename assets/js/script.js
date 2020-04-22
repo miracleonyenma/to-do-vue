@@ -23,6 +23,9 @@ new Vue({
         add : function(){
             this.todo.push({text: this.newTodoText, isDone:false})
             this.newTodoText = "";
+        }, 
+        remove : function(item){            
+            this.todo.splice(item, 1);         
         }
     }
 })
