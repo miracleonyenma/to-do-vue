@@ -7,11 +7,11 @@
 }
 
 :root {
-  --main: #a12cf7;
+  --main: hsla(250, 90%, 65%, 1);
 }
 
 .action-btn {
-  background: #a12cf7;
+  background: #7055f6;
   color: #fff;
   position: absolute;
   top: 50%;
@@ -34,7 +34,7 @@ header.main .info span {
 
 header.main .info #count {
   color: #fff;
-  background: #a12cf7;
+  background: #7055f6;
   font-weight: 100;
   font-style: italic;
 }
@@ -60,7 +60,7 @@ section.list-section header .input-field-cont {
 
 section.list-section section#list-items ul li {
   padding: 12px;
-  border: 2px solid #a12cf7;
+  border: 2px solid #7055f6;
   margin: 12px 0;
   display: -webkit-box;
   display: -ms-flexbox;

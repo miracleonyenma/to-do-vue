@@ -1,15 +1,18 @@
 var testdata = [
     {
         text : "Feed the dog",
-        isDone : true
+        isDone : true,
+        id : 0
     },
     {
         text : "Feed the dog again",
-        isDone : false
+        isDone : false,
+        id : 1
     },
     {
         text : "Feed the dog again, again",
-        isDone : false
+        isDone : false,
+        id : 2
     }
 ]
 
@@ -23,9 +26,16 @@ new Vue({
         add : function(){
             this.todo.push({text: this.newTodoText, isDone:false})
             this.newTodoText = "";
+            this.idFunc(this.todo);
         }, 
         remove : function(item){            
             this.todo.splice(item, 1);         
+        },
+        idFunc : function(arr){
+            arr = arr.map((i, index) => {
+                i.id = index
+                console.log("mapping")
+            })
         }
     }
 })

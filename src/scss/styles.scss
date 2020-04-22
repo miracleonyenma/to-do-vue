@@ -6,11 +6,11 @@
 }
 
 :root{
-    --main: #a12cf7;
+    --main: hsla(250, 90%, 65%, 1);
 }
 
 .action-btn{
-    background: #a12cf7;
+    background: hsla(250, 90%, 65%, 1);
     color: #fff;
     position: absolute;
     top: 50%;
@@ -33,7 +33,7 @@ header.main{
             // padding: 4px 8px;
             // border-radius: 4px;
             color: #fff;
-            background: #a12cf7;
+            background: hsla(250, 90%, 65%, 1);
             font-weight: 100;
             font-style: italic;
         }
@@ -67,7 +67,7 @@ section.list-section{
         ul{
             li{
                 padding: 12px;
-                border: 2px solid #a12cf7;
+                border: 2px solid hsla(250, 90%, 65%, 1);
                 margin: 12px 0;
                 display: flex;
                 align-items: center;
