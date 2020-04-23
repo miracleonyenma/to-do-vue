@@ -58,17 +58,20 @@ section.list-section header .input-field-cont {
   max-width: 100%;
 }
 
+section.list-section section#list-items ul {
+  position: relative;
+  -webkit-transition: all 0.32s ease-out;
+  transition: all 0.32s ease-out;
+}
+
 section.list-section section#list-items ul li {
   padding: 12px;
   border: 2px solid #7055f6;
   margin: 12px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+  display: block;
   position: relative;
+  top: 0;
 }
 
 section.list-section section#list-items ul li .remove-btn {
@@ -119,5 +122,21 @@ section.list-section section#list-items ul li input[type="checkbox"]:checked + l
 
 section.list-section section#list-items ul li input[type="checkbox"]:checked + label span {
   text-decoration: line-through;
+}
+
+.list-item-animated {
+  -webkit-transition: 0.32s ease-out;
+  transition: 0.32s ease-out;
+  position: relative;
+}
+
+.list-animation-enter, .list-animation-leave-to {
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.list-animation-leave-active {
+  position: absolute;
 }
 /*# sourceMappingURL=styles.css.map */

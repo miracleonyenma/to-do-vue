@@ -65,13 +65,16 @@ section.list-section{
 
     section#list-items{
         ul{
+            position: relative;
+            transition: all 0.32s ease-out;
             li{
                 padding: 12px;
                 border: 2px solid hsla(250, 90%, 65%, 1);
                 margin: 12px 0;
-                display: flex;
-                align-items: center;
+                width: 100%;
+                display: block;
                 position: relative;
+                top: 0;
 
                 .remove-btn{
                     padding: 12px 12px;
@@ -118,4 +121,18 @@ section.list-section{
             }
         }
     }
+}
+
+.list-item-animated{
+    transition: 0.32s ease-out;
+    position: relative;
+}
+
+.list-animation-enter, .list-animation-leave-to{
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.list-animation-leave-active{
+    position: absolute;
 }
