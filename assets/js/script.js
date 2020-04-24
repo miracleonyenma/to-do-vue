@@ -2,23 +2,21 @@ if(localStorage.getItem("testdata") == null){
     localStorage.setItem("testdata", JSON.stringify([]));
 }
 var testdata = JSON.parse(localStorage.getItem("testdata"));
-
-
 new Vue({
     el: "#app",
     data : {
         todo : testdata,
         newTodoText : "",
-        completed : testdata.reduce(function(i,item){
+        completed : testdata.reduce(function(i, item) {
             return i + (item.isDone == false)
         }, 0)
     },
     methods : {
-        add : function(){
-            if(this.newTodoText.trim() == ""){
+        add : function() {
+            if (this.newTodoText.trim() == "") {
                 return false
             } else {
-                this.todo.push({text: this.newTodoText, isDone:false, id: this.todo.length});
+                this.todo.push({ id: Math.floor(Math.random() * 9999) + 10, text: this.newTodoText, isDone: false });
                 this.newTodoText = "";
             }
         }, 
@@ -32,10 +30,10 @@ new Vue({
     watch:{
         todo: function(){   
             localStorage.setItem("testdata", JSON.stringify(this.todo));
-            this.completed = this.todo.reduce(function(i,item){
+            this.completed = this.todo.reduce(function(i, item) {
                 return i + (item.isDone == false)
             }, 0);
-        }, 
+        },
         deep : true
     }
 })

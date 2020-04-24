@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="app">
         <header class="block box main">
@@ -18,23 +20,23 @@
                 <span class="button" id="date">4th May 2020</span>
             </section>
         </header>
-    
+
         <section class="list-section">
             <header>
                 <div class="formu input-field-cont --box -placeholder">
-                    <input type="text" name="new" id="new" v-model="newTodoText"  v-on:keyup.enter="add()" required>
+                    <input type="text" name="new" id="new" v-model="newTodoText" v-on:keyup.enter="add()" required>
                     <label for="new">
                         <span>Enter new task</span>
                     </label>
                     <button id="add-btn" class="button action-btn" type="button" @click="add">&plus;</button>
                 </div>
             </header>
-            <section id="list-items">
+            <section id="list-items" class="">
                 <transition-group tag="ul" name="list-animation">
                     <li v-bind:key="item.id" v-for="(item, index) in todo" class="list-item-animated">
                         <div class="formu check-field-cont">
-                            <input type="checkbox" :name="'task'+index" :id="'task'+index" v-model:checked="item.isDone">
-                            <label :for="'task'+index">
+                            <input type="checkbox" :name="'task'+item.id" :id="'task'+item.id" v-model:checked="item.isDone">
+                            <label :for="'task'+item.id">
                                 <span>
                                     {{item.text}} - {{item.id}}
                                 </span>
@@ -46,8 +48,9 @@
             </section>
         </section>
     </div>
-    
+
     <script src="./assets/libs/vue/vue.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
