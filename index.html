@@ -31,7 +31,7 @@
             </header>
             <section id="list-items">
                 <transition-group tag="ul" name="list-animation">
-                    <li v-bind:key="index" v-for="(item, index) in todo" class="list-item-animated">
+                    <li v-bind:key="item.id" v-for="(item, index) in todo" class="list-item-animated">
                         <div class="formu check-field-cont">
                             <input type="checkbox" :name="'task'+index" :id="'task'+index" v-model:checked="item.isDone">
                             <label :for="'task'+index">
