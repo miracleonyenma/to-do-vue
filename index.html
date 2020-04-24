@@ -36,11 +36,11 @@
                             <input type="checkbox" :name="'task'+index" :id="'task'+index" v-model:checked="item.isDone">
                             <label :for="'task'+index">
                                 <span>
-                                    {{item.text}}
+                                    {{item.text}} - {{item.id}}
                                 </span>
                             </label>
                         </div>
-                        <button title="Remove this item" class="remove-btn button action-btn" @click="remove(index)">&times;</button>
+                        <button title="Remove this item" class="remove-btn button action-btn" @click="remove(item.id)">&times;</button>
                     </li>
                 </transition-group>
             </section>
