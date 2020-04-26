@@ -2,12 +2,14 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 :root {
   --main: hsla(250, 90%, 65%, 1);
+  --bg: #161a1d;
+  --text: #fff;
 }
 
 .action-btn {
@@ -17,19 +19,31 @@
   top: 50%;
   left: 100%;
   -webkit-transform: translate(-75%, -50%);
-  transform: translate(-75%, -50%);
+          transform: translate(-75%, -50%);
+  border-radius: 0;
+  border: none;
+}
+
+#app {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
 }
 
 header.main {
   padding: 12px;
+  background: var(--main);
+  border-radius: 0;
 }
 
 header.main h1 {
   margin: 8px 0;
+  color: #fff;
 }
 
 header.main .info span {
   margin: 0 8px 0 0;
+  border-radius: 0;
 }
 
 header.main .info #count {
@@ -58,10 +72,12 @@ section.list-section header .input-field-cont {
   max-width: 100%;
 }
 
+section.list-section header .input-field-cont input {
+  color: var(--text);
+}
+
 section.list-section section#list-items ul {
   position: relative;
-  -webkit-transition: all 0.32s ease-out;
-  transition: all 0.32s ease-out;
 }
 
 section.list-section section#list-items ul li {
@@ -69,17 +85,19 @@ section.list-section section#list-items ul li {
   border: 2px solid #7055f6;
   margin: 12px 0;
   width: 100%;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
-  top: 0;
 }
 
 section.list-section section#list-items ul li .remove-btn {
   padding: 12px 12px;
   line-height: 0.5;
   height: unset;
-  -webkit-transform: translate(calc(-100% - 8px), -50%);
-  transform: translate(calc(-100% - 8px), -50%);
+  -webkit-transform: translate(calc(-100% + 2px), -50%);
+          transform: translate(calc(-100% + 2px), -50%);
+  height: calc(100% + 2px);
 }
 
 section.list-section section#list-items ul li .check-field-cont {
@@ -96,54 +114,47 @@ section.list-section section#list-items ul li .check-field-cont label span {
   padding: 0 32px 0 20px;
   margin: auto;
   display: block;
+  line-height: 1;
 }
 
 section.list-section section#list-items ul li input[type="checkbox"] {
   -webkit-transform: scale(0);
-  transform: scale(0);
+          transform: scale(0);
   position: absolute;
 }
 
-section.list-section section#list-items ul li input[type="checkbox"]+label:after {
+section.list-section section#list-items ul li input[type="checkbox"] + label:after {
   -webkit-transform: translate(calc(-50% + 7px), -50%) scale(0);
-  transform: translate(calc(-50% + 7px), -50%) scale(0);
+          transform: translate(calc(-50% + 7px), -50%) scale(0);
 }
 
-section.list-section section#list-items ul li input[type="checkbox"]+label:before {
+section.list-section section#list-items ul li input[type="checkbox"] + label:before {
   top: 50%;
   -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
-section.list-section section#list-items ul li input[type="checkbox"]:checked+label:after {
+section.list-section section#list-items ul li input[type="checkbox"]:checked + label:after {
   -webkit-transform: translate(calc(-50% + 7px), -50%) scale(1);
-  transform: translate(calc(-50% + 7px), -50%) scale(1);
+          transform: translate(calc(-50% + 7px), -50%) scale(1);
 }
 
-section.list-section section#list-items ul li input[type="checkbox"]:checked+label span {
+section.list-section section#list-items ul li input[type="checkbox"]:checked + label span {
   text-decoration: line-through;
 }
 
-.list-item-animated {
+.list-complete-item {
   -webkit-transition: all 0.32s ease-out;
-  position: relative;
-  display: inline-block;
+  transition: all 0.32s ease-out;
 }
 
-
-.list-animation-enter,
-.list-animation-leave-to {
+.list-complete-enter, .list-complete-leave-to {
   opacity: 0;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
 }
 
-.list-animation-leave-active {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  position: absolute;
-  top: 0;
+.list-complete-leave-active {
+  position: absolute !important;
 }
-
-
 /*# sourceMappingURL=styles.css.map */

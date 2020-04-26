@@ -7,6 +7,12 @@
 
 :root{
     --main: hsla(250, 90%, 65%, 1);
+
+    
+    --bg: #161a1d;
+    --text: #fff;
+    // --bg: #fff;
+    // --text: #161a1d;
 }
 
 .action-btn{
@@ -16,18 +22,30 @@
     top: 50%;
     left: 100%;
     transform: translate(-75%, -50%);
+    border-radius: 0;
+    border: none;
+}
+
+#app{
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
 }
 
 header.main{
     padding: 12px;
+    background: var(--main);
+    border-radius: 0;
 
     h1{
         margin: 8px 0;
+        color: #fff;
     }
 
     .info{
         span{
             margin: 0 8px 0 0;
+            border-radius: 0;
         }
         #count{
             // padding: 4px 8px;
@@ -54,8 +72,9 @@ section.list-section{
             margin-right: auto;
             height: 60px;
             max-width: 100%;
-
+            
             input{
+                color: var(--text);
             }
         }
 
@@ -66,21 +85,21 @@ section.list-section{
     section#list-items{
         ul{
             position: relative;
-            transition: all 0.32s ease-out;
+    
             li{
                 padding: 12px;
                 border: 2px solid hsla(250, 90%, 65%, 1);
                 margin: 12px 0;
                 width: 100%;
-                display: block;
+                display: flex;
                 position: relative;
-                top: 0;
 
                 .remove-btn{
                     padding: 12px 12px;
                     line-height: 0.5;
                     height: unset;
-                    transform: translate(calc(-100% - 8px), -50%);
+                    transform: translate(calc(-100% + 2px), -50%);
+                    height: calc(100% + 2px);
                 }
 
                 .check-field-cont{
@@ -94,6 +113,7 @@ section.list-section{
                             padding: 0 32px 0 20px;
                             margin: auto;
                             display: block;
+                            line-height: 1;
                         }
                     }
                     
@@ -123,16 +143,15 @@ section.list-section{
     }
 }
 
-.list-item-animated{
-    transition: 0.32s ease-out;
-    position: relative;
+.list-complete-item{
+    transition: all 0.32s ease-out;
 }
 
-.list-animation-enter, .list-animation-leave-to{
+.list-complete-enter, .list-complete-leave-to{
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(30px);
 }
 
-.list-animation-leave-active{
-    position: absolute;
+.list-complete-leave-active{
+    position: absolute!important;
 }

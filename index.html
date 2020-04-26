@@ -17,7 +17,7 @@
             <h1 class="title">To do list</h1>
             <section class="info">
                 <span class="button" id="count">{{ completed }} tasks</span>
-                <span class="button" id="date">4th May 2020</span>
+                <span class="button" id="date">{{(new Date).toDateString()}}</span>
             </section>
         </header>
 
@@ -32,8 +32,8 @@
                 </div>
             </header>
             <section id="list-items" class="">
-                <transition-group tag="ul" name="list-animation">
-                    <li v-bind:key="item.id" v-for="(item, index) in todo" class="list-item-animated">
+                <transition-group  name="list-complete" tag="ul">
+                    <li v-bind:key="item.id" v-for="(item, index) in todo" class="list-complete-item">
                         <div class="formu check-field-cont">
                             <input type="checkbox" :name="'task'+item.id" :id="'task'+item.id" v-model:checked="item.isDone">
                             <label :for="'task'+item.id">
