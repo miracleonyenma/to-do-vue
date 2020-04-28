@@ -6,7 +6,7 @@
 }
 
 :root{
-    --main: hsla(250, 90%, 65%, 1);
+    --main: #7055f6;
 
     
     --bg: #161a1d;
@@ -16,7 +16,7 @@
 }
 
 .action-btn{
-    background: hsla(250, 90%, 65%, 1);
+    background: var(--main);
     color: #fff;
     position: absolute;
     top: 50%;
@@ -51,7 +51,7 @@ header.main{
             // padding: 4px 8px;
             // border-radius: 4px;
             color: #fff;
-            background: hsla(250, 90%, 65%, 1);
+            background: var(--main);
             font-weight: 100;
             font-style: italic;
         }
@@ -77,9 +77,6 @@ section.list-section{
                 color: var(--text);
             }
         }
-
-        #add-btn{
-        }
     }
 
     section#list-items{
@@ -88,7 +85,7 @@ section.list-section{
     
             li{
                 padding: 12px;
-                border: 2px solid hsla(250, 90%, 65%, 1);
+                border: 2px solid var(--main);
                 margin: 12px 0;
                 width: 100%;
                 display: flex;

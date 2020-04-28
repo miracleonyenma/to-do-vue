@@ -36,4 +36,16 @@ new Vue({
         },
         deep : true
     }
-})
+});
+
+if( 'serviceWorker' in navigator){
+    window.addEventListener("load", function(){
+        navigator.serviceWorker.register('/sw.js')
+        .then(function(reg){
+            console.log("Registered 😂", reg);
+        })
+        .catch(function(err){
+            console.log("No service worker for you 👅");
+        })
+    })
+}
