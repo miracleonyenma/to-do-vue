@@ -9,6 +9,7 @@
 :root {
   --main: #7055f6;
   --bg: #161a1d;
+  --bg-t: rgba(112, 85, 246, 0.149);
   --text: #fff;
 }
 
@@ -36,27 +37,103 @@ header.main {
   border-radius: 0;
 }
 
-header.main h1 {
-  margin: 8px 0;
-  color: #fff;
+header.main #logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-header.main .info span {
+header.main #logo .svg-cont {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin: 0 1em;
+}
+
+header.main #logo .svg-cont svg path, header.main #logo .svg-cont svg circle {
+  fill: #fff;
+}
+
+header.main #logo h1 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 2em;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header.main nav {
+  display: inline-block;
+  height: 100%;
+}
+
+header.main nav ul {
+  display: block;
+  list-style-type: none;
+}
+
+header.main nav ul li {
+  display: inline;
+}
+
+section#main {
+  width: 100%;
+  padding: 12px;
+}
+
+section#main .stats {
+  padding: 12px;
+  margin: 12px 0 0 0;
+  background: var(--bg-t);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+section#main .stats h1 {
+  margin: 8px 0;
+  color: var(--text);
+  opacity: 0.75;
+}
+
+section#main .stats .info span {
   margin: 0 8px 0 0;
   border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  -webkit-box-shadow: 5px 5px 0 #7055f626;
+          box-shadow: 5px 5px 0 #7055f626;
+  border: 1px solid var(--main);
 }
 
-header.main .info #count {
+section#main .stats .info #count {
   color: #fff;
   background: var(--main);
   font-weight: 100;
   font-style: italic;
 }
 
+@media screen and (min-width: 768px) {
+  section#main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: max-content 1fr;
+        grid-template-columns: -webkit-max-content 1fr;
+        grid-template-columns: max-content 1fr;
+    padding: 12px;
+  }
+  section#main .stats {
+    min-width: 300px;
+  }
+}
+
 section.list-section {
   min-width: 200px;
   width: 100%;
-  max-width: 400px;
+  max-width: 470px;
   margin: auto;
   padding: 12px;
 }
@@ -68,8 +145,11 @@ section.list-section header {
 section.list-section header .input-field-cont {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
   height: 60px;
   max-width: 100%;
+  -webkit-box-shadow: 5px 5px 0 #7055f626;
+          box-shadow: 5px 5px 0 #7055f626;
 }
 
 section.list-section header .input-field-cont input {
@@ -81,7 +161,7 @@ section.list-section section#list-items ul {
 }
 
 section.list-section section#list-items ul li {
-  padding: 12px;
+  padding: 0 12px;
   border: 2px solid var(--main);
   margin: 12px 0;
   width: 100%;
@@ -89,6 +169,8 @@ section.list-section section#list-items ul li {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-box-shadow: 5px 5px 0 #7055f626;
+          box-shadow: 5px 5px 0 #7055f626;
 }
 
 section.list-section section#list-items ul li .remove-btn {
@@ -102,11 +184,13 @@ section.list-section section#list-items ul li .remove-btn {
 
 section.list-section section#list-items ul li .check-field-cont {
   padding: 0 0;
+  width: 100%;
 }
 
 section.list-section section#list-items ul li .check-field-cont label {
   display: inline-block;
-  padding: 0;
+  padding: 12px;
+  width: 100%;
 }
 
 section.list-section section#list-items ul li .check-field-cont label span {
@@ -141,6 +225,20 @@ section.list-section section#list-items ul li input[type="checkbox"]:checked + l
 
 section.list-section section#list-items ul li input[type="checkbox"]:checked + label span {
   text-decoration: line-through;
+}
+
+@media screen and (min-width: 768px) {
+  section.list-section {
+    position: relative;
+    margin: 0 8% 0 auto;
+  }
+  section.list-section header {
+    width: calc(100% + 24px);
+    position: relative;
+    left: 100%;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
 .list-complete-item {

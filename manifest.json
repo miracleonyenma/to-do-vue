@@ -9,42 +9,42 @@
     "icons": [
         {
             "src": "assets/img/icons/dne72x72.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "72x72"
         },
         {
             "src": "assets/img/icons/dne96x96.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "96x96"
         },
         {
             "src": "assets/img/icons/dne128x128.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "128x128"
         },
         {
             "src": "assets/img/icons/dne144x144.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "144x144"
         },
         {
             "src": "assets/img/icons/dne152x152.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "152x152"
         },
         {
             "src": "assets/img/icons/dne192x192.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "192x192"
         },
         {
             "src": "assets/img/icons/dne384x384.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "384x384"
         },
         {
             "src": "assets/img/icons/dne512x512.png",
-            "type": "img/png",
+            "type": "image/png",
             "sizes": "512x512"
         }
     ]

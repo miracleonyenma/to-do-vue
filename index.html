@@ -20,37 +20,56 @@
 <body>
     <div id="app">
         <header class="block box main">
-            <h1 class="title">To do list</h1>
-            <section class="info">
-                <span class="button" id="count">{{ completed }} tasks</span>
-                <span class="button" id="date">{{(new Date).toDateString()}}</span>
-            </section>
+            <div id="logo">
+                <div class="svg-cont">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.7 139.5">
+                        <path class="cls-1"
+                        d="M119.16,17.34a5.1,5.1,0,0,1,.13,7.33L100.24,43.73l0,0L60,84a5.6,5.6,0,0,1-7.91,0L35.45,67.37a5.1,5.1,0,0,0-7.33.13,5.18,5.18,0,0,0,.22,7.16L44.88,91.22a15.8,15.8,0,0,0,22.32,0l36.37-36.37a3.06,3.06,0,0,1,4.88.76A57.48,57.48,0,1,1,90.72,35.23a3.05,3.05,0,0,0,3.93-.33L112,17.55A5.17,5.17,0,0,1,119.16,17.34ZM131.48,0a5.22,5.22,0,1,0,5.22,5.22A5.22,5.22,0,0,0,131.48,0Z" />
+                    </svg>
+                </div>
+                <h1>dne.</h1>
+            </div>
+            <!-- <nav>
+                <ul>
+                    <li>About</li>
+                    <li>Stats</li>
+                </ul>
+            </nav> -->
         </header>
 
-        <section class="list-section">
-            <header>
-                <div class="formu input-field-cont --box -placeholder">
-                    <input type="text" name="new" id="new" v-model="newTodoText" v-on:keyup.enter="add()" required>
-                    <label for="new">
-                        <span>Enter new task</span>
-                    </label>
-                    <button id="add-btn" class="button action-btn" type="button" @click="add">&plus;</button>
-                </div>
-            </header>
-            <section id="list-items" class="">
-                <transition-group  name="list-complete" tag="ul">
-                    <li v-bind:key="item.id" v-for="(item, index) in todo" class="list-complete-item">
-                        <div class="formu check-field-cont">
-                            <input type="checkbox" :name="'task'+item.id" :id="'task'+item.id" v-model:checked="item.isDone">
-                            <label :for="'task'+item.id">
-                                <span>
-                                    {{item.text}}
-                                </span>
-                            </label>
-                        </div>
-                        <button title="Remove this item" class="remove-btn button action-btn" @click="remove(item.id)">&times;</button>
-                    </li>
-                </transition-group>
+        <section id="main">
+            <div class="stats">
+                <h1 class="title">To do list</h1>
+                <section class="info">
+                    <span class="button" id="date">{{(new Date).toDateString()}}</span>
+                    <span class="button" id="count">{{ completed }} tasks</span>
+                </section>
+            </div>
+            <section class="list-section">
+                <header>
+                    <div class="formu input-field-cont --box -placeholder">
+                        <input type="text" name="new" id="new" v-model="newTodoText" v-on:keyup.enter="add()" required>
+                        <label for="new">
+                            <span>Enter new task</span>
+                        </label>
+                        <button id="add-btn" class="button action-btn" type="button" @click="add">&plus;</button>
+                    </div>
+                </header>
+                <section id="list-items" class="">
+                    <transition-group  name="list-complete" tag="ul">
+                        <li v-bind:key="item.id" v-for="(item, index) in todo" class="list-complete-item">
+                            <div class="formu check-field-cont">
+                                <input type="checkbox" :name="'task'+item.id" :id="'task'+item.id" v-model:checked="item.isDone">
+                                <label :for="'task'+item.id">
+                                    <span>
+                                        {{item.text}}
+                                    </span>
+                                </label>
+                            </div>
+                            <button title="Remove this item" class="remove-btn button action-btn" @click="remove(item.id)">&times;</button>
+                        </li>
+                    </transition-group>
+                </section>
             </section>
         </section>
     </div>

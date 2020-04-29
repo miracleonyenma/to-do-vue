@@ -1,5 +1,5 @@
 //precaching resources
-const cacheName = "cache-v1";
+const cacheName = "app-cache-v1";
 const resourcesToPrecache = [
     '/',
     'index.html',
@@ -22,7 +22,7 @@ self.addEventListener('install', event =>{
             return cache.addAll(resourcesToPrecache);
         })
         .catch(err => {
-            console.log(err)
+            console.log(err);
         })
     );
 });
@@ -37,6 +37,7 @@ self.addEventListener("fetch", event => {
     //respond with cached assets
     event.respondWith(caches.match(event.request)
     .then(cachedResponse => {
+        console.log(cachedResponse)
         return cachedResponse || fetch(event.request)
     })
     .catch(err => {

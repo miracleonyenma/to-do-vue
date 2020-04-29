@@ -1,3 +1,7 @@
+@mixin shadow {
+    box-shadow: 5px 5px 0 #7055f626;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -10,7 +14,9 @@
 
     
     --bg: #161a1d;
+    --bg-t: rgba(112, 85, 246, 0.149);
     --text: #fff;
+    
     // --bg: #fff;
     // --text: #161a1d;
 }
@@ -37,31 +43,106 @@ header.main{
     background: var(--main);
     border-radius: 0;
 
-    h1{
-        margin: 8px 0;
-        color: #fff;
+    #logo{    
+        display: inline-flex;
+        align-items: center;
+
+        .svg-cont{
+            width: 45px;
+            height: 45px;
+            display: inline-block;
+            margin: 0 1em;
+
+            svg{
+                path, circle{
+                    fill: #fff;
+                }
+            }
+        }
+
+        h1{
+            font-weight: 500;
+            // text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2em;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
     }
 
-    .info{
-        span{
-            margin: 0 8px 0 0;
-            border-radius: 0;
+    nav{
+        display: inline-block;
+        height: 100%;
+
+        ul{
+            display: block;
+            list-style-type: none;
+
+            li{
+                display: inline;
+            }
         }
-        #count{
-            // padding: 4px 8px;
-            // border-radius: 4px;
-            color: #fff;
-            background: var(--main);
-            font-weight: 100;
-            font-style: italic;
+
+    }
+
+}
+
+section#main{
+    width: 100%;
+    padding: 12px;
+
+    .stats{
+        padding: 12px;
+        margin: 12px 0 0 0;
+        background: var(--bg-t);
+        height: fit-content;
+
+        h1{
+            margin: 8px 0;
+            color: var(--text);
+            opacity: 0.75;
+        }
+    
+        .info{
+            span{
+                margin: 0 8px 0 0;
+                border-radius: 0;
+                background: transparent;
+                color: var(--text);
+                @include shadow();
+                border: 1px solid var(--main);
+
+            }
+            #count{
+                // padding: 4px 8px;
+                // border-radius: 4px;
+                color: #fff;
+                background: var(--main);
+                font-weight: 100;
+                font-style: italic;
+            }
+        }
+    
+    }
+}
+
+@media screen and (min-width: 768px){
+    section#main{
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        padding: 12px;
+
+        .stats{
+            min-width: 300px;
         }
     }
 }
 
+
 section.list-section{
     min-width: 200px;
     width: 100%;
-    max-width: 400px;
+    max-width: 470px;
     margin: auto;
     padding: 12px;
 
@@ -70,8 +151,10 @@ section.list-section{
         .input-field-cont{
             margin-left: auto;
             margin-right: auto;
+            margin-top: 0;
             height: 60px;
             max-width: 100%;
+            box-shadow: 5px 5px 0 #7055f626;
             
             input{
                 color: var(--text);
@@ -84,12 +167,13 @@ section.list-section{
             position: relative;
     
             li{
-                padding: 12px;
+                padding: 0 12px;
                 border: 2px solid var(--main);
                 margin: 12px 0;
                 width: 100%;
                 display: flex;
                 position: relative;
+                @include shadow()
 
                 .remove-btn{
                     padding: 12px 12px;
@@ -101,9 +185,12 @@ section.list-section{
 
                 .check-field-cont{
                     padding: 0 0;
+                    width: 100%;
+
                     label{
                         display: inline-block;
-                        padding: 0;
+                        padding: 12px;
+                        width: 100%;
 
                         span{
                             width: 100%;
@@ -136,6 +223,20 @@ section.list-section{
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    section.list-section{
+        position: relative;
+        margin: 0 8% 0 auto;
+
+        header{
+            width: calc(100% + 24px);
+            position: relative;
+            left: 100%;
+            transform: translateX(-100%);
         }
     }
 }
